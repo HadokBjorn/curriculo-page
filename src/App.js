@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { Sidebar } from "./components/Sidebar";
+import SessionAbout from "./components/SessionAbout";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageContainer>
+    <Sidebar/>
+    <SessionAbout/>
+    </PageContainer>
   );
 }
+
+const PageContainer = styled.main`
+  width: 100%;
+  display: flex;
+  background-color: #e5e5e5;
+
+  font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
 
 export default App;
